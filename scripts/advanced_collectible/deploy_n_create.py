@@ -10,6 +10,7 @@ def deploy_n_create():
         config["networks"][network.show_active()]["keyhash"],
         config["networks"][network.show_active()]["fee"],
         {"from": account},
+        publish_source=config["networks"][network.show_active()]["publish_source"],
     );
 
     fund_with_link(advanced_collectible.address);
@@ -18,7 +19,7 @@ def deploy_n_create():
     creating_tx.wait(1);
     print("New Token has been created");
     
-    return advanced_collectible
+    return advanced_collectible, creating_tx
 
 
 def main():
