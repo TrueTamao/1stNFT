@@ -4,6 +4,10 @@ from web3 import Web3
 LOCAL_BLOCKCHAIN_ENVIRONMENTS = ["hardhat", "development", "ganache", "mainnet-fork"]
 OPENSEA_URL = "https://testnets.opensea.io/assets/{}/{}"
 contract_to_mock = {"link_token": LinkToken, "vrf_coordinator": VRFCoordinatorMock}
+BREED = {0: "PUG", 1: "SHIBA_INU", 2: "ST_BERNARD"}
+
+def get_breed(breed_number): 
+    return BREED[breed_number]
 
 def get_account(index=None, id=None):
     if index:
