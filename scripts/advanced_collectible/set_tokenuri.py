@@ -14,11 +14,11 @@ def main():
     print(f"The number of tokens you've deployed is: {number_of_advanced_collectibles}")
     for token_id in range(number_of_advanced_collectibles):
         breed = get_breed(advanced_collectible.tokenIdToBreed(token_id))
-        if not advanced_collectible.tokenURI(token_id).startswith("https://"):
-            print("Setting tokenURI of {}".format(token_id))
-            set_tokenURI(token_id, advanced_collectible, dog_metadata_dic[breed])
-        else:
-            print("Skipping {}, we already set that tokenURI!".format(token_id))
+        #if not advanced_collectible.tokenURI(token_id).startswith("https://"):
+        print(f"Setting tokenURI of {token_id} tokenURI {dog_metadata_dic[breed]}")
+        set_tokenURI(token_id, advanced_collectible, dog_metadata_dic[breed])
+        #else:
+        #    print("Skipping {}, we already set that tokenURI!".format(token_id))
 
 def set_tokenURI(token_id, nft_contract, tokenURI):
     account = get_account()
